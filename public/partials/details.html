@@ -1,0 +1,40 @@
+<h1 class="header text-center subheader"> IMDB Top 250 Movies</h1>
+
+<div class="row text-center navigation">
+  <a href="/#/gallery">Gallery View</a> |
+  <a href="/#/list">List View</a>
+</div>
+
+
+<div class="row" id="details">
+
+  <div class="columns small-1">
+    <a class="vertical-center" ng-href="/#/details/{{movieRank !== 1 ? movieRank - 1 : movies.length}}">&#9664;</a>
+  </div>
+
+  <div class="columns medium-3">
+    <img ng-src="../data/images/{{movies[movieRank - 1].imdbID}}.jpg"/>
+  </div>
+
+  <div class="columns medium-7">
+      Rank: {{movies[movieRank - 1].rank}} <br/>
+      Title: {{movies[movieRank - 1].title}} <br/>
+      Rated: {{movies[movieRank - 1].rated}} <br/>
+      Released: {{movies[movieRank - 1].released}} <br/>
+      Runtime: {{movies[movieRank - 1].runtime}} <br/>
+      Genre: {{movies[movieRank - 1].genre.join(", ")}} <br/>
+      Director: {{movies[movieRank - 1].director.join(", ")}} <br/>
+      Actors: {{movies[movieRank - 1].actors.join(", ")}} <br/>
+      Plot: {{movies[movieRank - 1].plot}} <br/>
+      Language: {{movies[movieRank - 1].language.join(", ")}} <br/>
+      Country: {{movies[movieRank - 1].country.join(", ")}} <br/>
+      Awards: {{movies[movieRank - 1].awards}} <br/>
+      Metascore: {{movies[movieRank - 1].metascore}} <br/>
+      IMDB Rating: {{movies[movieRank - 1].imdbRating}} <br/>
+  </div>
+
+  <div class="columns small-1">
+    <a class="vertical-center" ng-href="/#/details/{{movieRank !== movies.length ? movieRank + 1 : 1}}">&#9654;</a>
+  </div>
+
+</div>

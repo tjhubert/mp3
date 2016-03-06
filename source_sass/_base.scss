@@ -1,1 +1,78 @@
 // Add any custom Sass & CSS here
+.vertical-center {
+  position: relative;
+  @include vertical-center(0%);
+}
+
+.header {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.navigation {
+  margin-bottom: 30px;
+}
+
+#list {
+  #radio-reverse {
+    float: none;
+  }
+  .movie-list {
+    background: $primary-color;
+    a {
+      color: white;
+    }
+    &:nth-child(odd) {
+      background: $secondary-color;
+    }
+
+    .list-image-container{
+      height: 250px;
+      img {
+        padding: 10px;
+      }
+    }
+    .list-text-container {
+      height: 250px;
+      div {
+        line-height: 150%;
+      }
+    }
+  }
+}
+
+#details {
+  background-color: $primary-color;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  a {
+    color: white;
+    @include transition (color 0.1s);
+    &:hover {
+      color: LightGray;
+    }
+  }
+}
+
+
+#gallery{
+  button {
+    margin-right: 10px;
+  }
+  .poster-container{
+    height: 270px;
+    opacity: 1;
+    @include transition(opacity 0.1s);
+    a {
+      width: 100%;
+      img {
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+    }
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}

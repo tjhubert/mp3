@@ -1,0 +1,52 @@
+<h1 class="header text-center subheader"> IMDB Top 250 Movies</h1>
+
+<div class="row text-center navigation">
+  <a href="/#/gallery">Gallery View</a>
+</div>
+
+<div id="list">
+  <div class="row">
+    <div class="small-12 medium-6 medium-centered columns">
+      <label>Search
+        <input type="text" placeholder="" ng-model="searchQuery"/>
+      </label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-6 medium-centered columns">
+      <label for="order">Order by</label>
+      <select id="order" ng-model="orderQuery" ng-init="orderQuery='rank'">
+        <option value="rank" ng-checked="true">Rank</option>
+        <option value="title">Title</option>
+      </select>
+    </div>
+
+    <fieldset class="small-12 medium-6 medium-centered columns" id="radio-reverse" ng-init="reverse=false">
+      <input type="radio" ng-model="reverse" ng-value="false" id="orderAscending" ng-checked="true"><label for="orderAscending">Ascending</label>
+      <input type="radio" ng-model="reverse" ng-value="true" id="orderDescending"><label for="orderAscending">Descending</label>
+    </fieldset>
+  </div>
+
+  <div class="row">
+      <div class="row columns small-12 small-centered movie-list" ng-repeat="movie in movies | filter: listFilter | orderBy: orderQuery : reverse">
+        <a ng-href="/#/details/{{movie.rank}}">
+
+          <div class="columns small-2 list-image-container">
+              <img class="vertical-center" ng-src="../data/images/{{movie.imdbID}}.jpg"/>
+          </div>
+          <div class="columns small-10 list-text-container">
+            <div class="vertical-center">
+              Rank: {{movie.rank}} <br/>
+              Title: {{movie.title}} <br/>
+              Genre: {{movie.genre.join(", ")}} <br/>
+              Director: {{movie.director.join(", ")}} <br/>
+              Actors: {{movie.actors.join(", ")}} <br/>
+              Plot: {{movie.plot}} <br/>
+            </div>
+          </div>
+
+        </a>
+      </div>
+  </div>
+</div>

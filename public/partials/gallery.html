@@ -1,0 +1,25 @@
+<h1 class="header text-center subheader"> IMDB Top 250 Movies</h1>
+
+<div class="row text-center navigation">
+  <a href="/#/list">List View</a>
+</div>
+
+<div id="gallery">
+  <div class="row">
+    <div class="small-12 columns">
+      <h5 class="subheader">Filter by genre:</h5>
+    </div>
+    <button class="button small-2 medium-1 columns float-left" ng-repeat="genreFilter in genreFilters" ng-click="applyFilter(genreFilter)">
+      {{genreFilter}}
+    </button>
+  </div>
+
+  <div class="row">
+      <div class="columns small-2 poster-container float-left" ng-repeat="movie in movies | filter: {genre: appliedGenreFilter}" >
+        <a ng-href="/#/details/{{movie.rank}}">
+          <img class="poster-image" ng-src="../data/images/{{movie.imdbID}}.jpg"/>
+        </a>
+      </div>
+  </div>
+
+</div>
