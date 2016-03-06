@@ -17,7 +17,7 @@
   <div class="row">
       <div class="columns small-2 poster-container float-left" ng-repeat="movie in movies | filter: {genre: appliedGenreFilter}" >
         <a ng-href="/#/details/{{movie.rank}}">
-          <img class="poster-image" ng-src="../data/images/{{movie.imdbID}}.jpg"/>
+          <img class="poster-image" ng-src="/data/images/{{movie.imdbID}}.jpg"/>
         </a>
       </div>
   </div>

@@ -20,6 +20,12 @@
     background: $primary-color;
     a {
       color: white;
+      &:hover {
+        div {
+          opacity: 0.5;
+        }
+
+      }
     }
     &:nth-child(odd) {
       background: $secondary-color;
