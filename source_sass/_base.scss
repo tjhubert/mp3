@@ -33,12 +33,20 @@
 
     .list-image-container{
       height: 250px;
+      @include breakpoint(small only) {
+        height: 200px;
+      }
       img {
+        height: 100%;
+        width: auto;
         padding: 10px;
       }
     }
     .list-text-container {
       height: 250px;
+      @include breakpoint(small only) {
+        font-size: 0.8em;
+      }
       div {
         line-height: 150%;
       }
@@ -51,6 +59,9 @@
   color: white;
   padding-top: 20px;
   padding-bottom: 20px;
+  @include breakpoint(small only) {
+    font-size: 0.8em;
+  }
   a {
     color: white;
     @include transition (color 0.1s);
@@ -67,6 +78,9 @@
   }
   .poster-container{
     height: 270px;
+    @include breakpoint(small only) {
+      height: 200px;
+    }
     opacity: 1;
     @include transition(opacity 0.1s);
     a {
