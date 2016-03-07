@@ -6,18 +6,20 @@
 
 <div id="gallery">
   <div class="row">
-    <div class="small-12 columns">
+    <div class="small-12 columns text-center">
       <h5 class="subheader">Filter by genre:</h5>
     </div>
-    <button class="button small-3 medium-1 columns float-left" ng-repeat="genreFilter in genreFilters" ng-click="applyFilter(genreFilter)">
-      {{genreFilter}}
-    </button>
+    <div id="button-container">
+      <button class="button small-3 medium-1 columns" ng-repeat="genreFilter in genreFilters" ng-click="applyFilter(genreFilter)">
+        {{genreFilter}}
+      </button>
+    </div>
   </div>
 
   <div class="row">
-      <div class="columns small-4 medium-2 poster-container float-left" ng-repeat="movie in movies | filter: {genre: appliedGenreFilter}" >
+      <div class="columns small-4 medium-2 poster-container" ng-repeat="movie in movies | filter: {genre: appliedGenreFilter}" >
         <a ng-href="#/details/{{movie.rank}}">
-          <img class="poster-image" ng-src="data/images/{{movie.imdbID}}.jpg"/>
+          <img class="poster-image thumbnail" ng-src="data/images/{{movie.imdbID}}.jpg"/>
         </a>
       </div>
   </div>

@@ -73,8 +73,12 @@
 
 
 #gallery{
-  button {
-    margin-right: 10px;
+  #button-container {
+    text-align: center;
+    button {
+      float: none;
+      margin-right: 10px;
+    }
   }
   .poster-container{
     height: 270px;
@@ -83,14 +87,6 @@
     }
     opacity: 1;
     @include transition(opacity 0.1s);
-    a {
-      width: 100%;
-      img {
-        position: relative;
-        width: 100%;
-        height: auto;
-      }
-    }
     &:hover {
       opacity: 0.6;
     }

@@ -6,13 +6,16 @@ app.controller('DetailsCtrl', ['$scope', '$routeParams', '$http', function($scop
 app.controller('GalleryCtrl', ['$scope', '$http', function($scope, $http){
     tryLoadData($scope, $http, function(){
         var genreFilters = $scope.movies.map(function(elem){return elem.genre});
-        $scope.genreFilters = ["All"];
         genreFilters = [].concat.apply([], genreFilters);
+        $scope.genreFilters = [];
         genreFilters.forEach(function(genre) {
             if ($scope.genreFilters.indexOf(genre) === -1) {
                 $scope.genreFilters.push(genre);
             }
         });
+        $scope.genreFilters.sort();
+        $scope.genreFilters.unshift("All");
+
     });
 
     $scope.applyFilter = function(genreFilter) {
